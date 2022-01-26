@@ -1,6 +1,3 @@
-const SWAPI_ROOT = 'https://swapi.dev/api/';
-const SWAPI_PEOPLE = 'people'
-
 // promise method
 // export const getApiResource = () => {
 //         return fetch(SWAPI_ROOT + SWAPI_PEOPLE)
