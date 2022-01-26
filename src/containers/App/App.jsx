@@ -1,9 +1,9 @@
-import { getApiResource } from '../../utils/network';
 import './App.module.css';
-
-function App() {
+import PeoplePage from '../PeoplePage'
+const App = () => {
   return (
     <div className="App">
+      <PeoplePage />
       refactoring
     </div>
   );
