@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getApiResource } from '../../utils/network';
 import { API_PEOPLE } from '../../constants/api';
 import { getPeopleId, getPeopleImg } from '../../services/getPeopleData';
+import PeopleList from '../../components/PeoplePage/PeopleList';
+import styles from './PeoplePage.module.css'
 
 const PeoplePage = () => {
 
@@ -25,22 +27,12 @@ const PeoplePage = () => {
         getResource(API_PEOPLE);
     }, [])
 
-    console.log(people);
-
     return (
         <nav>
-            <ul>
+            <ul className={styles.peoplePage__container}>
                 {
-                    people ? (
-                        people.map(({ name, id, img }) => {
-                            return (
-                                <li key={id}>
-                                    <img src={img} alt={name} />
-                                    <p>{name}</p>
-                                </li>
-                            )
-                        })
-                    )
+                    people
+                        ? people.map(({ id, name, img }) => <PeopleList key={id} name={name} img={img} />)
                         : <h1>Loading...</h1>
                 }
             </ul>
